@@ -9,6 +9,8 @@ SET NSSM=tools\nssm.exe
 
 %NSSM% install %ServiceName% %AppPath%
 
+if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
+
 %NSSM% set %ServiceName% Description %Description%
 
 REM No console app
